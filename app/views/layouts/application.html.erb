@@ -1,29 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html class="v-full">
 <head>
   <title>Rainforest</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-	<% if flash[:notice] %>
-		<p class="notice"><%= flash[:notice] %></p>
-	<% end %>
-	<% if flash[:alert] %>
-		<p class="alert"><%= flash[:alert] %></p>
-	<% end %>
+<body class="h-full v-full">
+	<header class="h-full medium">
+		<div class="left">
+			<%= image_tag("Rainforest-icon.png", class: "logo-img") %>
+			<h1 class="logo">Rainforest</h1></div>
+		<div class="user-info right">
+			<% if current_user %>
+				Signed in as <%= current_user.first_name + " " + current_user.last_name %>.<br>
+				<%= link_to "My profile", user_path(current_user.id), class: "right" %>
+				<%= link_to "Log out", session_path("current"), :method => :delete %>
+			<% else %>
+				<%= link_to button_tag("LOG IN"), new_session_path %><br>
+				New user? <%= link_to "Create an account", new_user_path %>
+			<% end %>
+		</div>
+	</header>
+	<nav class="dark h-full">
+		<%= link_to "HOME", products_path %> | 
+		<%= link_to "ADD PRODUCT", new_product_path %>
+	</nav>
+	<main>
 
-	<p class="user-info">
-		<% if current_user %>
-			Signed in as <%= current_user.first_name + " " + current_user.last_name %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
-		<% else %>
-			<%= link_to button_tag("LOG IN"), new_session_path %>
-			New user? <%= link_to "Create an account", new_user_path %>
+		<% if flash[:notice] %>
+			<p class="notice"><%= flash[:notice] %></p>
 		<% end %>
-	</p>
+		<% if flash[:alert] %>
+			<p class="alert"><%= flash[:alert] %></p>
+		<% end %>
 
-<%= yield %>
+		<%= yield %>
+
+	</main>
 
 </body>
 </html>

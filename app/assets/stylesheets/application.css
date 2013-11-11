@@ -11,3 +11,107 @@
  *= require_self
  *= require_tree .
  */
+
+/*BROWSER STYLE RESET*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p,
+a, img, strong, ol, ul, li, fieldset, form, label,
+article, aside, footer, header,
+nav, section, main {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: middle;
+	box-sizing:border-box;
+}
+article, footer, header, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+
+
+/*POSITIONING*/
+
+
+.container {
+	display:block;
+}
+
+.container:before,
+.container:after {
+  content: "";
+  display: table;
+}
+.container:after {
+  clear: both;
+}
+.container {
+  zoom: 1;
+}
+
+.right { 	float:right;	}
+.left {		float:left;		}
+
+.h-full {
+	width:100%;
+	margin:0;
+}
+
+.v-full {
+	height: 100%;
+}
+
+header {
+	height: 4em;
+	position: fixed;
+	top:0;
+	padding:1em;
+}
+
+.logo, .logo-img {
+	display: inline-block;
+	max-height: 2.5em;
+}
+
+nav {
+	height: 3em;
+	position: fixed;
+	top:4em;
+	padding:1em;
+}
+
+main {
+	margin: 9em 10% 1em 10%;
+}
+
+
+/*VISUAL STYLING*/
+
+a {
+	color:#99FF99;
+}
+
+a:hover, a:active {
+	color: white;
+}
+
+.medium {
+	background-color: forestgreen;
+	color: white;
+}
+
+.dark {
+	background-color: #003300;
+	color: white;
+}
+
+.logo {
+	font-style: italic;
+}
