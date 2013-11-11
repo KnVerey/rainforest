@@ -4,7 +4,7 @@
 	<% unless review.user.nil? %>
 		<p>
 			<%= review.comment %><br>
-			Written by: <%= review.user.email %> on <%= review.created_at %>
+			Written by: <%= review.user.username %> on <%= review.created_at %>
 		</p>
 	<% end %>
 <% end %>
