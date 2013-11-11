@@ -1,5 +1,5 @@
 <h1><%= @product.name %></h1>
-<h3>Only <%= @product.price_in_cents %></h3>
+<h3>Only <%= @product.formatted_price %></h3>
 <p><%= @product.description %></p>
 
 <%= link_to button_tag("Edit this product"), edit_product_path(@product) %>
