@@ -16,7 +16,7 @@
 
 <section class="reviews-display container">
 
-	<% unless (current_user.nil? && @product.reviews.empty?) || (!current_user.nil? && @product.reviews[0].user_id.nil?) %>
+	<% unless @product.no_reviews?(current_user) %>
 		<%= render "list_reviews" %>
 	<% end %>
 
