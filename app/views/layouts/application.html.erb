@@ -13,7 +13,7 @@
 			<h1 class="logo">Rainforest</h1></div>
 		<div class="user-info right">
 			<% if current_user %>
-				Signed in as <%= current_user.first_name + " " + current_user.last_name %>.<br>
+				Signed in as <%= current_user.first_name + " " + current_user.last_name %><br>
 				<%= link_to "My profile", user_path(current_user.id), class: "right" %>
 				<%= link_to "Log out", session_path("current"), :method => :delete %>
 			<% else %>
@@ -23,8 +23,8 @@
 		</div>
 	</header>
 	<nav class="dark h-full">
-		<%= link_to "HOME", products_path %> | 
-		<%= link_to "ADD PRODUCT", new_product_path %>
+		<%= link_to "Home", products_path %> |
+		<%= link_to "Add Product", new_product_path %>
 	</nav>
 	<main>
 

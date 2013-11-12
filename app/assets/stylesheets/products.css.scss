@@ -2,9 +2,31 @@
 	text-align: center;
 }
 
-.square-box {
+.product-image {
 	height: 15em;
 	width: 15em;
 	margin: 1em;
 	display: inline-block;
+	text-align: center;
+	border:3px solid #003300;
+	border-radius: 5px;
+}
+
+.placeholder {
+	height:0;
+	width: 15em;
+	border: none;
+	display: inline-block;
+}
+
+.product-image h3 {
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	padding-top: 5em;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.product-image h3:hover {
+	background-color: rgba(0,0,0,0.7)
 }

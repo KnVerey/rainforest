@@ -39,7 +39,6 @@ ol, ul {
 
 /*POSITIONING*/
 
-
 .container {
 	display:block;
 }
@@ -61,7 +60,14 @@ ol, ul {
 
 .h-full {
 	width:100%;
-	margin:0;
+}
+
+.h-half{
+	width: 50%;
+}
+
+.h-center {
+	margin: auto;
 }
 
 .v-full {
@@ -88,13 +94,35 @@ nav {
 }
 
 main {
-	margin: 9em 10% 1em 10%;
+	margin: 9em 10% 3em 10%;
 }
+
+.form {
+	width: 60%;
+	margin: 0 20%;
+}
+
+input, textarea {
+	width:100%;
+	margin-bottom: 1em;
+}
+
+input[type="submit"] {
+	width: 50%;
+	margin:0 ;
+}
+
+.form h1 { margin-bottom: 1em;}
+
 
 
 /*VISUAL STYLING*/
 
 a {
+	text-decoration: none;
+}
+
+.dark a, .medium a {
 	color:#99FF99;
 }
 
@@ -112,6 +140,25 @@ a:hover, a:active {
 	color: white;
 }
 
+.light {
+	background-color: white;
+	color: #003300;
+}
+
+.light a {
+	color: forestgreen;
+}
+
+.light a:hover, .light a:active {
+	color:#003300;
+}
+
 .logo {
 	font-style: italic;
+}
+
+nav a {
+	font-weight: bold;
+	font-family: serif;
+	text-decoration: none;
 }

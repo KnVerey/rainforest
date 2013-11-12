@@ -10,14 +10,17 @@
 	</div>
 	<% end %>
 
-	<%= p.label :name %>
+	<%= p.label :name %> <br>
 	<%= p.text_field :name %>
 	<br>
-	<%= p.label :price_in_cents %>
+	<%= p.label :price_in_cents %> <br>
 	<%= p.number_field :price_in_cents %>
 	<br>
-	<%= p.label :description %>
+	<%= p.label :description %> <br>
 	<%= p.text_area :description %>
+	<br>
+	<%= p.label :photo %> <br>
+	<%= p.text_field :photo %>
 	<br><br>
 	<%= p.submit %>
 <% end %>
