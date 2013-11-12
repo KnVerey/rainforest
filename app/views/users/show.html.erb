@@ -5,7 +5,7 @@
 	<strong>Password:</strong> [hidden] <br><br>
 
 	<%= link_to button_tag("Update info"), edit_user_path %>
-	<%= link_to button_tag("Delete account"), user_path, confirm: "Are you sure you want to delete your account? \nTHIS CANNOT BE UNDONE!", method: :delete %>
+	<%= link_to button_tag("Delete account"), user_path, confirm: "Are you sure you want to delete your account? \nYour reviews will also be deleted.\nTHIS CANNOT BE UNDONE!", method: :delete %>
 </div>
 <div class="h-half">
 	<% unless @user.products.empty? %>
