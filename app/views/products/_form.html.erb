@@ -1,7 +1,7 @@
 <%= form_for @product do |p| %>
 	<% if @product.errors.any? %>
 	<div id="error-explanation">
-		<h2><%= pluralize(@product.errors.count, "error") %> prevented this product from being saved:</h2>
+		<h3>Uh oh! I found <%= pluralize(@product.errors.count, "problem") %> with your form:</h3>
 		<ul>
 			<% @product.errors.full_messages.each do |msg| %>
 				<li><%= msg %></li>
@@ -13,8 +13,8 @@
 	<%= p.label :name %> <br>
 	<%= p.text_field :name %>
 	<br>
-	<%= p.label :price_in_cents %> <br>
-	<%= p.number_field :price_in_cents %>
+	<%= p.label :formatted_price, "Price" %> <br>
+	$<%= p.text_field :formatted_price %>
 	<br>
 	<%= p.label :description %> <br>
 	<%= p.text_area :description %>

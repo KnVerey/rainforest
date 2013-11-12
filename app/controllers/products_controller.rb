@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-
   def index
   	@products = Product.all
   end
@@ -18,7 +17,6 @@ class ProductsController < ApplicationController
 
   def create
   	@product = Product.new(product_params)
-
   	if @product.save
   		redirect_to products_path
   	else
@@ -48,6 +46,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
+    params[:product][:price_in_cents] = ((params[:product][:formatted_price]).to_f * 100).ceil
   	params.require(:product).permit(:name, :description, :price_in_cents, :photo)
   end
 end

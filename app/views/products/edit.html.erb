@@ -1,5 +1,6 @@
-<h1>Edit product</h1>
+<section class="h-center light form">
+	<h1>Edit product</h1>
+ 	<%= render "form" %>
 
-<%= render "form" %>
-
-<%= link_to "Cancel", product_path(@product) %>
+	<%= link_to "Cancel", product_path(@product), class: "right" %>
+</section>

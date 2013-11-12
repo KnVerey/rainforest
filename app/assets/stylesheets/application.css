@@ -112,11 +112,27 @@ input[type="submit"] {
 	margin:0 ;
 }
 
+#product_formatted_price {
+	width:6em;
+}
+
 .form h1 { margin-bottom: 1em;}
 
 
 
 /*VISUAL STYLING*/
+
+#error-explanation {
+	margin:1em;
+	padding: 1em;
+	background-color: lightpink;
+	border:1px solid red;
+	border-radius: 5px;
+}
+#error-explanation li {
+	list-style: decimal; 
+	margin-left: 2em;
+}
 
 a {
 	text-decoration: none;
