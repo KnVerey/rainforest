@@ -1,0 +1,7 @@
+<h2>User Profile: <%= @user.first_name + " " + @user.last_name %></h2>
+
+<strong>Username:</strong> <%= @user.username %> <br>
+<strong>Email address:</strong> <%= @user.email %> <br>
+<strong>Password:</strong> [hidden] <br><br>
+
+<%= link_to button_tag("Update info"), edit_user_path %>

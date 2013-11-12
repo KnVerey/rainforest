@@ -1,0 +1,27 @@
+<div class="h-half">
+	<%= form_for @user do |f| %>
+		<% if @user.errors.any? %>
+			<div class="error-explanation">
+				<h2>There were <%= pluralize(@user.errors.count, "problem") %> with your input: </h2>
+				<ul class="">
+					<% @user.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+		<%= f.label :first_name %>
+		<%= f.text_field :first_name %>
+		<%= f.label :last_name %>
+		<%= f.text_field :last_name %>
+		<%= f.label :email %>
+		<%= f.email_field :email %>
+		<%= f.label :username, "Username (for reviews)" %>
+		<%= f.text_field :username %>
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+		<%= f.label :password_confirmation %>
+		<%= f.password_field :password_confirmation %>
+		<%= f.submit %>
+	<% end %>
+</div>

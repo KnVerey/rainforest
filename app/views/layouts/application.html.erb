@@ -10,7 +10,7 @@
 	<header class="h-full medium">
 		<div class="left">
 			<%= image_tag("Rainforest-icon.png", class: "logo-img") %>
-			<h1 class="logo">Rainforest</h1></div>
+			<h1 class="logo"><%= link_to "Rainforest", products_path %></h1></div>
 		<div class="user-info right">
 			<% if current_user %>
 				Signed in as <%= current_user.first_name + " " + current_user.last_name %><br>
@@ -26,7 +26,7 @@
 		<%= link_to "Home", products_path %> |
 		<%= link_to "Add Product", new_product_path %>
 	</nav>
-	<main>
+	<main class="container">
 
 		<% if flash[:notice] %>
 			<p class="notice"><%= flash[:notice] %></p>

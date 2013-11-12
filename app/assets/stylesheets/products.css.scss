@@ -37,8 +37,9 @@
 	border: 3px solid forestgreen;
 	border-radius: 5px;
 	display: inline-block;
-	width: 50%;
+	min-width: 50%;
 	text-align: center;
+	vertical-align: top;
 }
 
 .product-display-case img {
@@ -53,20 +54,26 @@
 }
 
 .review-display-case {
-	padding:3em;
-	width: 49%;
+	padding: 1em 3em;
+	min-width: 49%;
+	max-width: 30em;
 	display: inline-block;
+	vertical-align: top;
+}
+
+.review-display-case h2 {
+	padding-left: 0.75em;
 }
 
 .nav-buttons {
 	padding:1em;
-	margin: 1em 0;
-	border:3px solid #003300;
+	width: 90%;
+	margin: 5%;
 	border-radius: 5px;
 }
 
 article {
-	padding:1em;
+	padding:0 1em 1em 1em;
 }
 
 .new-review-form {

@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
+
+  before_filter :set_user, :except => [:new, :create]
+
+  def show
+  end
+
   def new
-  	@user = User.new
+    @user = User.new
   end
 
   def create
@@ -12,8 +18,28 @@ class UsersController < ApplicationController
   	end
   end
 
+  def edit
+  end
+
+  def update
+    if @user.update_attributes(user_params)
+      redirect_to user_path(@user)
+    else
+      render "edit"
+    end
+  end
+
+  def destroy
+    @user.destroy
+    redirect_to new_session_path
+  end
+
   private
   def user_params
   	params.require(:user).permit(:email, :password, :password_confirmation, :username, :first_name, :last_name)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end
