@@ -5,3 +5,4 @@
 <strong>Password:</strong> [hidden] <br><br>
 
 <%= link_to button_tag("Update info"), edit_user_path %>
+<%= link_to button_tag("Delete account"), user_path, confirm: "Are you sure you want to delete your account? \nTHIS CANNOT BE UNDONE!", method: :delete %>

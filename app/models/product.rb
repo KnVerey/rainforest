@@ -2,8 +2,8 @@ class Product < ActiveRecord::Base
 	validates :description, :name, :price_in_cents, presence: true
 	validates :price_in_cents, numericality: {only_integer: true}
 
-	has_many :reviews
-	has_many :users, :through => :reviews
+	has_many :reviews, dependent: :destroy
+	has_many :users, :through => :reviews, dependent: :destroy
 
 	def formatted_price
 		sprintf("%.2f",price_in_dollars)

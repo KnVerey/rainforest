@@ -139,6 +139,12 @@ input[type="submit"] {
 	margin-left: 2em;
 }
 
+.field_with_errors {
+	color:red;
+	font-weight: bold;
+	display: inline;
+}
+
 button.delete {
 	color:pink;
 	background-color: white;
@@ -165,6 +171,10 @@ h2 {
 
 a {
 	text-decoration: none;
+}
+
+nav a {
+	padding:0.5em 1em;
 }
 
 .dark a, .medium a {

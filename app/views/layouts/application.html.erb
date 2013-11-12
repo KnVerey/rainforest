@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <%= favicon_link_tag "Rainforest-icon.png" %>
 </head>
 <body class="h-full v-full">
 	<header class="h-full medium">
@@ -23,7 +24,7 @@
 		</div>
 	</header>
 	<nav class="dark h-full">
-		<%= link_to "Home", products_path %> |
+		<%= link_to "Home", products_path %>
 		<%= link_to "Add Product", new_product_path %>
 	</nav>
 	<main class="container light">

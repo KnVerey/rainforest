@@ -35,8 +35,8 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
 
-gem 'binding_of_caller'
-gem 'better_errors'
+# gem 'binding_of_caller'
+# gem 'better_errors'
 
 # Use unicorn as the app server
 # gem 'unicorn'
