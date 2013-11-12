@@ -1,8 +1,8 @@
 <div class="h-half">
 	<%= form_for @user do |f| %>
 		<% if @user.errors.any? %>
-			<div class="error-explanation">
-				<h2>There were <%= pluralize(@user.errors.count, "problem") %> with your input: </h2>
+			<div id="error-explanation">
+				<h3>Uh oh! I found <%= pluralize(@user.errors.count, "problem") %> with your input: </h3>
 				<ul class="">
 					<% @user.errors.full_messages.each do |msg| %>
 					<li><%= msg %></li>

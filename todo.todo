@@ -1,9 +1,8 @@
- ☐ Able to delete user (and reviews)... dependent delete doesn't seem to delete from database??!
- ☐ Display reviewed products on profile page
  ☐ Products belong to users, and only those users can edit/delete
- ☐ OR merchant and shopper accounts
  ☐ shopping carts and orders
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Display reviewed products on profile page @done (13-11-12 17:25)
+ ✔ Able to delete user (and reviews) @done (13-11-12 16:03)
  ✔ Able to delete reviews @done (13-11-12 13:21)

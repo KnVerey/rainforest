@@ -68,7 +68,9 @@ ol, ul {
 }
 
 .h-half{
-	width: 50%;
+	min-width: 49%;
+	display: inline-block;
+	vertical-align: top;
 }
 
 .h-center {
@@ -135,7 +137,7 @@ input[type="submit"] {
 	border-radius: 5px;
 }
 #error-explanation li {
-	list-style: decimal; 
+	list-style: square; 
 	margin-left: 2em;
 }
 
