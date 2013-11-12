@@ -153,6 +153,10 @@ button.delete:hover, button.delete:active {
 	border-radius: 5px;
 }
 
+#login {
+	width: 100%;
+}
+
 h2 {
 	color:#003300;
 	font-style: italic;

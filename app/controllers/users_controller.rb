@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(user_params)
-      redirect_to user_path(@user)
+      redirect_to user_path(@user), notice: "Update saved"
     else
       render "edit"
     end
