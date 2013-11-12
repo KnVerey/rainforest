@@ -14,7 +14,7 @@
 
 </section>
 
-<section class="review-display-case container">
+<section class="reviews-display container">
 	<% puts @product.reviews.to_s %>
 
 	<% unless (!current_user && @product.reviews[0].nil?) || (current_user && @product.reviews[0].user.nil?) %>

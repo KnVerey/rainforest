@@ -139,6 +139,20 @@ input[type="submit"] {
 	margin-left: 2em;
 }
 
+button.delete {
+	color:pink;
+	background-color: white;
+	border-radius: 5px;
+	font-weight: bold;
+	transition: all 0.1s ease-in-out;
+}
+
+button.delete:hover, button.delete:active {
+	color: red;
+	font-size: 0.8em;
+	border-radius: 5px;
+}
+
 h2 {
 	color:#003300;
 	font-style: italic;
