@@ -1,24 +1,26 @@
-<h4>Have your say</h4>
+<section class="new-review-form">
+	<h4>Own this product? Have your say</h4>
 
-<% if current_user %>
-	
-	<%= form_for([@product, @review]) do |f| %>
-		<% if @review.errors.any? %>
-			<div class="error-explanation">
-				<h2>There were <%= pluralize(@review.errors.count, "problem") %> with your review: </h2>
-				<ul>
-					<%= @review.errors.full_messages.each do |msg| %>
-						<li><%= msg %></li>
-					<% end %>
-				</ul>
-			</div>
+	<% if current_user %>
+		
+		<%= form_for([@product, @review]) do |f| %>
+			<% if @review.errors.any? %>
+				<div class="error-explanation">
+					<h2>There were <%= pluralize(@review.errors.count, "problem") %> with your review: </h2>
+					<ul>
+						<%= @review.errors.full_messages.each do |msg| %>
+							<li><%= msg %></li>
+						<% end %>
+					</ul>
+				</div>
+			<% end %>
+
+			<%= f.label :comment %>
+			<%= f.text_area :comment %>
+			<%= f.submit %>
+
 		<% end %>
-
-		<%= f.label :comment %>
-		<%= f.text_area :comment %>
-		<%= f.submit %>
-
+	<% else %>
+		<p>Please <%= link_to "log in", new_session_path %> to write a review.</p>
 	<% end %>
-<% else %>
-	<p>Please <%= link_to "log in", new_session_path %> to write a review.</p>
-<% end %>
+</section>

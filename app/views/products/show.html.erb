@@ -1,16 +1,24 @@
-<h1><%= @product.name %></h1>
-<h3>Only $<%= @product.formatted_price %></h3>
-<%= image_tag(@product.photo) %>
-<p><%= @product.description %></p>
+<section class="product-display-case dark">
 
-<% puts @product.reviews.to_s %>
+	<h1><%= @product.name %></h1>
+	<h3>Only $<%= @product.formatted_price %></h3><br>
+	<p><strong>About this item:</strong> <%= @product.description %></p>
+	<br><br>
+	<%= image_tag(@product.photo) %> 
+</section>
 
-<% unless (!current_user && @product.reviews[0].nil?) || (current_user && @product.reviews[0].user.nil?) %>
-	<%= render "list_reviews" %>
-<% end %>
+<section class="review-display-case">
+	<% puts @product.reviews.to_s %>
 
-<%= render "new_review_form" %>
+	<% unless (!current_user && @product.reviews[0].nil?) || (current_user && @product.reviews[0].user.nil?) %>
+		<%= render "list_reviews" %>
+	<% end %>
 
-<%= link_to button_tag("Edit this product"), edit_product_path(@product) %>
-<%= link_to button_tag("Delete this product"), @product, confirm: "Are you sure you want to delete this product?", method: :delete %>
-<%= link_to "Back to product listing", products_path %>
+	<%= render "new_review_form" %>
+</section>
+
+<section class="nav-buttons h-full medium">
+	<%= link_to button_tag("Edit this product"), edit_product_path(@product) %>
+	<%= link_to button_tag("Delete this product"), @product, confirm: "Are you sure you want to delete this product?", method: :delete %>
+	<%= link_to "Back to products list", products_path, class: "right" %>
+</section>

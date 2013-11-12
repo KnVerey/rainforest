@@ -31,3 +31,47 @@
 .product-image h3:hover {
 	background-color: rgba(0,0,0,0.7)
 }
+
+.product-display-case {
+	padding:1em;
+	border: 3px solid forestgreen;
+	border-radius: 5px;
+	display: inline-block;
+	width: 50%;
+	text-align: center;
+}
+
+.product-display-case img {
+	border: 3px solid forestgreen;
+	border-radius: 5px;	
+	max-width: 25em;
+	max-height: 25em;
+}
+
+.product-display-case h1 {
+	font-size: 3em;
+}
+
+.review-display-case {
+	padding:3em;
+	width: 49%;
+	display: inline-block;
+}
+
+.nav-buttons {
+	padding:1em;
+	margin: 1em 0;
+	border:3px solid #003300;
+	border-radius: 5px;
+}
+
+article {
+	padding:1em;
+}
+
+.new-review-form {
+	border:1px dashed #003300;
+	border-radius: 5px;
+	padding: 1em;
+	margin-top: 2em;
+}

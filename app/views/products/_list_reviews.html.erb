@@ -1,10 +1,10 @@
-<h3>Reviews for <%= @product.name %></h3>
+<h2>Reviews for <%= @product.name %></h2>
 
 <% @product.reviews.each do |review| %>
 	<% unless review.user.nil? %>
-		<p>
-			<%= review.comment %><br>
-			Written by: <%= review.user.username %> on <%= review.created_at %>
-		</p>
+		<article>
+			<strong><%= review.comment %></strong><br>
+			<em>Written by <%= review.user.username %> on <%= review.created_at %></em>
+		</article>
 	<% end %>
 <% end %>

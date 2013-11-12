@@ -22,7 +22,7 @@
 html, body, div, span, h1, h2, h3, h4, h5, h6, p,
 a, img, strong, ol, ul, li, fieldset, form, label,
 article, aside, footer, header,
-nav, section, main {
+nav, section, main,div {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -177,4 +177,12 @@ nav a {
 	font-weight: bold;
 	font-family: serif;
 	text-decoration: none;
+}
+
+.notice {
+	padding:1em;
+	margin: 1em;
+	background-color: lightyellow;
+	border:3px solid tomato;
+	border-radius: 5px;
 }
