@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_filter :load_product, only: [:show, :edit, :update, :destroy]
+  before_filter :ensure_logged_in, except: [:index, :show]
 
   def index
   	@products = Product.all
