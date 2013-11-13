@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_filter :load_product, only: [:show, :edit, :update, :destroy]
   before_filter :ensure_logged_in, except: [:index, :show]
+  before_filter :load_categories, only: [:new, :edit]
 
   def index
   	@products = Product.all
@@ -48,10 +49,14 @@ class ProductsController < ApplicationController
   private
   def product_params
     params[:product][:price_in_cents] = ((params[:product][:price_in_dollars]).to_f * 100).ceil
-  	params.require(:product).permit(:name, :description, :price_in_cents, :photo, :user_id)
+  	params.require(:product).permit(:name, :description, :price_in_cents, :photo, :user_id, :category_id)
   end
 
   def load_product
     @product = Product.find(params[:id])
+  end
+
+  def load_categories
+    @categories = Category.all
   end
 end

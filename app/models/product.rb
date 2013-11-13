@@ -1,10 +1,12 @@
 class Product < ActiveRecord::Base
-	validates :description, :name, :price_in_cents, presence: true
+	validates :description, :name, :price_in_cents, :category_id, presence: true
 	validates :price_in_cents, numericality: {only_integer: true}
 
 	belongs_to :user
 	has_many :reviewers, :through => :reviews, :class_name => "User", :source => :user
 	has_many :reviews, dependent: :destroy
+
+	belongs_to :category
 
 	def formatted_price
 		return "FREE" if price_in_cents==0

@@ -114,6 +114,11 @@ input, textarea {
 	margin-bottom: 1em;
 }
 
+select {
+	width: 25%;
+	margin-bottom: 1em;
+}
+
 textarea {
 	min-height: 4em;
 }
