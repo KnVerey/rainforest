@@ -11,25 +11,24 @@
  *= require_self
  *= require_tree .
  */
-
 /*BROWSER STYLE RESET*/
-
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, h1, h2, h3, h4, h5, h6, p,
-a, img, strong, ol, ul, li, fieldset, form, label,
-article, aside, footer, header,
-nav, section, main,div {
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License:  none (public domain)
+ */
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,a,img,strong,ol,ul,li,fieldset,form,label,article,aside,footer,header,#nav,section,main,div {
 	margin: 0;
 	padding: 0;
 	border: 0;
 	vertical-align: middle;
-	box-sizing:border-box;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
 }
-article, footer, header, nav, section {
+
+article,footer,header,section {
 	display: block;
 }
 
@@ -37,37 +36,41 @@ button {
 	margin: 0;
 }
 
-ol, ul {
+ol,ul {
 	list-style: none;
 }
 
-
 /*POSITIONING*/
+.container {
+	display: block;
+}
+
+.container:before,.container:after {
+	content: "";
+	display: table;
+}
+
+.container:after {
+	clear: both;
+}
 
 .container {
-	display:block;
+	zoom: 1;
 }
 
-.container:before,
-.container:after {
-  content: "";
-  display: table;
-}
-.container:after {
-  clear: both;
-}
-.container {
-  zoom: 1;
+.right {
+	float: right;
 }
 
-.right { 	float:right;	}
-.left {		float:left;		}
+.left {
+	float: left;
+}
 
 .h-full {
-	width:100%;
+	width: 100%;
 }
 
-.h-half{
+.h-half {
 	min-width: 49%;
 	display: inline-block;
 	vertical-align: top;
@@ -84,20 +87,56 @@ ol, ul {
 header {
 	height: 4em;
 	position: fixed;
-	top:0;
-	padding:1em;
+	top: 0;
+	padding: 1em;
 }
 
-.logo, .logo-img {
+.logo,.logo-img {
 	display: inline-block;
 	max-height: 2.5em;
 }
 
-nav {
+#nav {
 	height: 3em;
 	position: fixed;
-	top:4em;
-	padding:1em;
+	top: 4em;
+	padding: 1em;
+	list-style: none;
+	display: inline-block;
+	z-index: 10;
+}
+
+#nav li {
+	display: inline-block;
+	padding: 0;
+}
+
+#nav ul {
+	position: absolute;
+	top: -9999px;
+	list-style: none;
+	background-color: #003300;
+	padding: 1em;
+	margin: 0;
+}
+
+#nav ul li {
+	display: block;
+	padding: 0.25em;
+}
+
+#nav ul li a {
+	font-weight: normal;
+	margin-left: 5px;
+}
+
+#nav li:hover ul {
+	top: 2.8em;
+	left: 4em;
+}
+
+#nav li:hover ul li a:hover {
+	text-decoration: underline;
 }
 
 main {
@@ -109,8 +148,8 @@ main {
 	margin: 0 20%;
 }
 
-input, textarea {
-	width:100%;
+input,textarea {
+	width: 100%;
 	margin-bottom: 1em;
 }
 
@@ -124,52 +163,57 @@ textarea {
 }
 
 article {
-	border:1px solid black;
+	border: 1px solid black;
 	padding: 0.5em;
 	border-radius: 5px;
 }
 
 input[type="submit"] {
-	margin:0 ;
+	margin: 0;
 }
 
 #product_price_in_dollars {
-	width:6em;
+	width: 6em;
 }
 
-.form h1 { margin-bottom: 1em;}
-
-
+.form h1 {
+	margin-bottom: 1em;
+}
 
 /*VISUAL STYLING*/
-
 #error-explanation {
-	margin:1em;
+	margin: 1em;
 	padding: 1em;
 	background-color: lightpink;
-	border:1px solid red;
+	border: 1px solid red;
 	border-radius: 5px;
 }
+
 #error-explanation li {
-	list-style: square; 
+	list-style: square;
 	margin-left: 2em;
 }
 
 .field_with_errors {
-	color:red;
+	color: red;
 	font-weight: bold;
 	display: inline;
 }
 
 button.delete {
-	color:pink;
+	color: pink;
 	background-color: white;
 	border-radius: 5px;
 	font-weight: bold;
+
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+	-ms-transition: all 0.1s ease-in-out;
 	transition: all 0.1s ease-in-out;
 }
 
-button.delete:hover, button.delete:active {
+button.delete:hover,button.delete:active {
 	color: red;
 	font-size: 0.8em;
 	border-radius: 5px;
@@ -180,10 +224,15 @@ button.reply {
 	color: #99FF99;
 	border-radius: 5px;
 	font-size: 1.5em;
+
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+	-ms-transition: all 0.1s ease-in-out;
 	transition: all 0.1s ease-in-out;
 }
 
-button.reply:hover, button.reply:active {
+button.reply:hover,button.reply:active {
 	font-size: 1.8em;
 	color: white;
 }
@@ -193,7 +242,7 @@ button.reply:hover, button.reply:active {
 }
 
 h2 {
-	color:#003300;
+	color: #003300;
 	font-style: italic;
 	padding-bottom: 0.5em;
 }
@@ -202,15 +251,15 @@ a {
 	text-decoration: none;
 }
 
-nav a {
-	padding:0.5em 1em;
+#nav a {
+	padding: 0.5em 1em;
 }
 
-.dark a, .medium a {
-	color:#99FF99;
+.dark a,.medium a {
+	color: #99FF99;
 }
 
-a:hover, a:active {
+a:hover,a:active {
 	color: white;
 }
 
@@ -233,32 +282,36 @@ a:hover, a:active {
 	color: forestgreen;
 }
 
-.light a:hover, .light a:active {
-	color:#003300;
+.light a:hover,.light a:active {
+	color: #003300;
 }
 
 .logo {
 	font-style: italic;
 }
 
-nav a {
+#nav a {
 	font-weight: bold;
 	font-family: serif;
 	text-decoration: none;
 }
 
 .notice {
-	padding:1em;
+	padding: 1em;
 	margin: 1em;
 	background-color: lightyellow;
-	border:3px solid tomato;
+	border: 3px solid tomato;
 	border-radius: 5px;
 }
 
 .logo a {
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
 	transition: all 0.5s ease-in-out;
 }
 
-.logo a:hover, .logo a:active {
+.logo a:hover,.logo a:active {
 	color: skyblue;
 }

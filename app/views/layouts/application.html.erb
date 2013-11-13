@@ -23,10 +23,22 @@
 			<% end %>
 		</div>
 	</header>
-	<nav class="dark h-full">
-		<%= link_to "Home", products_path %>
-		<%= link_to "Add Listing", new_product_path %>
-	</nav>
+
+	<ul id="nav" class="dark h-full">
+		<li><%= link_to "Home", products_path %></li>
+		<li>
+			<%= link_to "Categories", categories_path %>
+			<ul>
+				<% Category.all.each do |c| %>
+					<li><%= link_to c.name, category_path(c) %></li>
+					<% if c.id % 7 == 0 %>
+					<% end %>
+				<% end %>
+			</ul>
+		</li>
+		<li><%= link_to "Add Listing", new_product_path %></li>
+	</ul>
+
 	<main class="container light">
 
 		<% if flash[:notice] %>
