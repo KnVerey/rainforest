@@ -1,7 +1,7 @@
 <section class="product-display-case dark container">
 
 	<h1><%= @product.name %></h1>
-	<h3>Only $<%= @product.formatted_price %></h3><br>
+	<h3><%= @product.formatted_price %></h3><br>
 	<p><%= @product.description %></p>
 	<br><br>
 	<%= image_tag(@product.photo) unless @product.photo.empty? %> 

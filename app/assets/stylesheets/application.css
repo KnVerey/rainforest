@@ -119,7 +119,7 @@ input[type="submit"] {
 	margin:0 ;
 }
 
-#product_formatted_price {
+#product_price_in_dollars {
 	width:6em;
 }
 

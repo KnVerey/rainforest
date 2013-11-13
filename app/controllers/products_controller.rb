@@ -47,7 +47,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params[:product][:price_in_cents] = ((params[:product][:formatted_price]).to_f * 100).ceil
+    params[:product][:price_in_cents] = ((params[:product][:price_in_dollars]).to_f * 100).ceil
   	params.require(:product).permit(:name, :description, :price_in_cents, :photo, :user_id)
   end
 
