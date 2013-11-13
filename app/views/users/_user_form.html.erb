@@ -14,10 +14,8 @@
 		<%= f.text_field :first_name %>
 		<%= f.label :last_name %>
 		<%= f.text_field :last_name %>
-		<%= f.label :email %>
+		<%= f.label :email, "Email (will be visible to users you message)" %>
 		<%= f.email_field :email %>
-		<%= f.label :username, "Username (shows in messages)" %>
-		<%= f.text_field :username %>
 		<%= f.label :password %>
 		<%= f.password_field :password %>
 		<%= f.label :password_confirmation %>

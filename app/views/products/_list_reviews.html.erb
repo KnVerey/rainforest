@@ -8,12 +8,12 @@
 		<div class="review-case">
 			<article>
 				<%= review.comment %><br><br>
-				<strong><%= "#{review.user.username} (#{review.user.email})" %></strong> <br>
+				<strong><%= review.user.first_name %></strong> <br>
 				<%= "#{review.created_at.to_formatted_s(:long_ordinal)}" %>
 			</article>
 			<% if current_user.id == review.user_id %>
 				<div class="action-button-column">
-					<%= link_to button_tag("X", class: "delete"), product_review_path(review.product_id, review.id), confirm: "Are you sure you want to delete this message?", method: :delete %>
+					<%= link_to button_tag("X", class: "delete"), product_review_path(@product, review), confirm: "Are you sure you want to delete this message?", method: :delete %>
 				</div>
 			<% end %>
 		</div>

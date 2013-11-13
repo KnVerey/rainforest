@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
 	has_many :reviews, dependent: :destroy
 	has_many :reviewed_products, :through => :reviews, :class_name => "Product", :source => :product
 
-	validates_presence_of :first_name, :last_name, :username, :email
+	validates_presence_of :first_name, :last_name, :email
 	validates :email, uniqueness: true
 end

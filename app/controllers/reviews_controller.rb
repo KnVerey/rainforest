@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 	before_filter :load_product
-	before_filter :ensure_logged_in, :except => [:show]
+	before_filter :ensure_logged_in
 
   def create
   	@review = @product.reviews.build(review_params)

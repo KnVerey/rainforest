@@ -1,6 +1,5 @@
 <div class="h-half">
 	<h2>Account: <%= @user.first_name + " " + @user.last_name %></h2>
-	<strong>Username:</strong> <%= @user.username %> <br>
 	<strong>Email address:</strong> <%= @user.email %> <br>
 	<strong>Password:</strong> [hidden] <br><br>
 
@@ -14,7 +13,10 @@
 			<ul>
 				<% @user.products.each do |product| %>
 					<li><%= link_to product.name, product_path(product) %>
-						<%= " — " + pluralize(product.reviewers.count, "message") + " received" %></li>
+						—
+						<% if product.reviews.count > 0 %><strong><% end %>
+							<%= pluralize(product.reviews.count, "message") + " received" %>
+							<% if product.reviews.count > 0 %></strong><% end %></li>
 				<% end %>
 			</ul>
 		</section>

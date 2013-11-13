@@ -1,9 +1,12 @@
  ☐ add categories
  ☐ show most recent 9 or so listings on home page
  ☐ REFACTOR
+ ☐ add seeds
+ ☐ add button to write email to user who message you (mailto:)
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ remove username @done (13-11-13 12:20)
  ✔ convert reviews to expressions of interest, only visible to product owner @done (13-11-13 02:22)
  ✔ login timeout @done (13-11-13 01:17)
  ✔ remove ability to see other users' profiles @done (13-11-13 01:15)
