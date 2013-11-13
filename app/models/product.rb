@@ -15,7 +15,4 @@ class Product < ActiveRecord::Base
 		sprintf("%.2f",(price_in_cents.to_f / 100))
 	end
 
-	def no_reviews?(current_user)
-		(current_user.nil? && self.reviews.empty?) || (!current_user.nil? && self.reviews[0].user_id.nil?)
-	end
 end
