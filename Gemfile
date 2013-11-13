@@ -44,6 +44,8 @@ gem 'better_errors'
 
 gem 'rails_12factor'
 
+ruby '2.0.0'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

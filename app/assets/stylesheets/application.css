@@ -182,6 +182,11 @@ input[type="submit"] {
 }
 
 /*VISUAL STYLING*/
+
+.centered {
+	text-align: center;
+}
+
 #error-explanation {
 	margin: 1em;
 	padding: 1em;

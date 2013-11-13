@@ -1,5 +1,9 @@
 <h1 class="centered-h1">Category: <%= @category.name %></h1>
 
+<% if @category.products.empty? %>
+	<p class="centered">There aren't any listings here yet.</p>
+<% end %>
+
 <div class="thumbnails h-full">
 	<% @category.products.each do |p| %>
 		<a href=<%= product_path(p) %>>
