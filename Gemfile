@@ -42,6 +42,8 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'binding_of_caller'
 gem 'better_errors'
 
+gem 'rails_12factor'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
