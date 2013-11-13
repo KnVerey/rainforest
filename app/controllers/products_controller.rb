@@ -18,6 +18,8 @@ class ProductsController < ApplicationController
 
   def create
   	@product = Product.new(product_params)
+    @product.user_id = current_user.id
+
   	if @product.save
   		redirect_to products_path, notice: "Yay, product added!"
   	else
@@ -29,6 +31,8 @@ class ProductsController < ApplicationController
   end
 
   def update
+    @product.user_id = current_user.id
+
   	if @product.update_attributes(product_params)
   		redirect_to product_path(@product), notice: "Product updated"
   	else
@@ -44,7 +48,7 @@ class ProductsController < ApplicationController
   private
   def product_params
     params[:product][:price_in_cents] = ((params[:product][:formatted_price]).to_f * 100).ceil
-  	params.require(:product).permit(:name, :description, :price_in_cents, :photo)
+  	params.require(:product).permit(:name, :description, :price_in_cents, :photo, :user_id)
   end
 
   def load_product
