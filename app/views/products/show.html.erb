@@ -7,8 +7,10 @@
 	<%= image_tag(@product.photo) unless @product.photo.empty? %> 
 
 	<section class="nav-buttons medium container">
-		<%= link_to button_tag("Edit this product"), edit_product_path(@product) %>
-		<%= link_to button_tag("Delete this product"), @product, confirm: "Are you sure you want to delete this product?", method: :delete %>
+		<% if current_user.id == @product.user_id %>
+			<%= link_to button_tag("Edit this product"), edit_product_path(@product) %>
+			<%= link_to button_tag("Delete this product"), @product, confirm: "Are you sure you want to delete this product?", method: :delete %>
+		<% end %>
 		<%= link_to button_tag("Back to products list"), products_path %>
 	</section>
 
@@ -20,5 +22,7 @@
 		<%= render "list_reviews" %>
 	<% end %>
 
-	<%= render "new_review_form" %>
+	<% unless current_user.id == @product.user_id %>
+		<%= render "new_review_form" %>
+	<% end %>
 </section>

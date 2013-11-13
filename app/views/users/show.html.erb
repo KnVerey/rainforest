@@ -9,9 +9,19 @@
 </div>
 <div class="h-half">
 	<% unless @user.products.empty? %>
-		<h3>Products you've reviewed</h3>
+		<h3>Products you're offering</h3>
 		<ul>
 			<% @user.products.each do |product| %>
+				<li><%= link_to product.name, product_path(product) %>
+					<%= "($" + product.formatted_price + ")" %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<% unless @user.reviewed_products.empty? %>
+		<h3>Products you've reviewed</h3>
+		<ul>
+			<% @user.reviewed_products.each do |product| %>
 				<li><%= link_to product.name, product_path(product) %>
 					<%= "($" + product.formatted_price + ")" %></li>
 			<% end %>
