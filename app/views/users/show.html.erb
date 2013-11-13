@@ -1,5 +1,5 @@
-<h2>User Profile: <%= @user.first_name + " " + @user.last_name %></h2>
 <div class="h-half">
+	<h2>Account: <%= @user.first_name + " " + @user.last_name %></h2>
 	<strong>Username:</strong> <%= @user.username %> <br>
 	<strong>Email address:</strong> <%= @user.email %> <br>
 	<strong>Password:</strong> [hidden] <br><br>
@@ -9,22 +9,26 @@
 </div>
 <div class="h-half">
 	<% unless @user.products.empty? %>
-		<h3>Your listings</h3>
-		<ul>
-			<% @user.products.each do |product| %>
-				<li><%= link_to product.name, product_path(product) %>
-					<%= " — " + pluralize(product.reviewers.count, "message") + " received" %></li>
-			<% end %>
-		</ul>
+		<section class="user-listings light">
+			<h2>Your listings</h2>
+			<ul>
+				<% @user.products.each do |product| %>
+					<li><%= link_to product.name, product_path(product) %>
+						<%= " — " + pluralize(product.reviewers.count, "message") + " received" %></li>
+				<% end %>
+			</ul>
+		</section>
 	<% end %>
 
 	<% unless @user.reviewed_products.empty? %>
-		<h3>Listings you've messaged</h3>
-		<ul>
-			<% @user.reviewed_products.each do |product| %>
-				<li><%= link_to product.name, product_path(product) %>
-					<%= "(" + product.formatted_price + ")" %></li>
-			<% end %>
-		</ul>
+		<section class="messages-sent light">
+			<h2>Listings you've messaged</h2>
+			<ul>
+				<% @user.reviewed_products.each do |product| %>
+					<li><%= link_to product.name, product_path(product) %>
+						<%= "(" + product.formatted_price + ")" %></li>
+				<% end %>
+			</ul>
+		</section>
 	<% end %>
 </div>

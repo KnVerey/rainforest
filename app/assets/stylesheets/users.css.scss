@@ -4,9 +4,16 @@
 
 ul {
 	list-style: square;
-	margin: 0 0 0 2em;
+	margin: 0 0 2em 2em;
 }
 
 li {
 	padding: 0.5em;
+}
+
+.messages-sent, .user-listings {
+	border: 3px solid forestgreen;
+	border-radius: 5px;
+	padding: 1em;
+	margin: 2em 0;
 }
