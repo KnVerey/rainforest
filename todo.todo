@@ -1,9 +1,9 @@
- ☐ add categories
- ☐ show most recent 9 or so listings on home page
  ☐ REFACTOR
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ show most recent 9 or so listings on home page @done (13-11-13 17:53)
+ ✔ add categories @done (13-11-13 17:53)
  ✔ add seeds @done (13-11-13 12:57)
  ✔ add button to write email to user who message you (mailto:) @done (13-11-13 12:48)
  ✔ remove username @done (13-11-13 12:20)

@@ -1,0 +1,13 @@
+<h1 class="centered-h1">All Categories</h1>
+
+<div class="thumbnails h-full">
+	<% @categories.each do |c| %>
+		<a href=<%= category_path(c) %>>
+			<div class="product-image container" style="background-image:url(<%= c.products.last.photo unless c.products.empty? %>); background-size:cover">
+				<h3><%= c.name %> <br> </h3>
+			</div>
+		</a>
+	<% end %>
+	<div class="product-image placeholder"></div>
+	<div class="product-image placeholder"></div>
+</div>
