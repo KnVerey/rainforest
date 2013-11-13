@@ -1,11 +1,13 @@
- ☐ display "free" if price is zero
  ☐ convert reviews to expressions of interest, only visible to product owner
  ☐ add categories
- ☐ stretch images to fit
+ ☐ show most recent 9 or so listings on home page
  ☐ login timeout
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ remove ability to see other users' profiles @done (13-11-13 01:15)
+ ✔ stretch images to fit @done (13-11-13 00:08)
+ ✔ display "free" if price is zero @done (13-11-13 00:02)
  ✔ Products belong to users, and only those users can edit/delete @done (13-11-12 20:21)
  ✔ Display reviewed products on profile page @done (13-11-12 17:25)
  ✔ Able to delete user (and reviews) @done (13-11-12 16:03)

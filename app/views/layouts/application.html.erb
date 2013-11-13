@@ -15,7 +15,7 @@
 		<div class="user-info right">
 			<% if current_user %>
 				Signed in as <%= current_user.first_name + " " + current_user.last_name %><br>
-				<%= link_to "My profile", user_path(current_user.id), class: "right" %>
+				<%= link_to "My account", user_path(current_user.id), class: "right" %>
 				<%= link_to "Log out", session_path("current"), :method => :delete %>
 			<% else %>
 				<%= link_to button_tag("LOG IN", id: "login", class: "right"), new_session_path %><br>
@@ -25,7 +25,7 @@
 	</header>
 	<nav class="dark h-full">
 		<%= link_to "Home", products_path %>
-		<%= link_to "Add Product", new_product_path %>
+		<%= link_to "Add Listing", new_product_path %>
 	</nav>
 	<main class="container light">
 

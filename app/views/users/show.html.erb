@@ -5,25 +5,25 @@
 	<strong>Password:</strong> [hidden] <br><br>
 
 	<%= link_to button_tag("Update info"), edit_user_path %>
-	<%= link_to button_tag("Delete account"), user_path, confirm: "Are you sure you want to delete your account? \nYour reviews will also be deleted.\nTHIS CANNOT BE UNDONE!", method: :delete %>
+	<%= link_to button_tag("Delete account"), user_path, confirm: "Are you sure you want to delete your account? \nYour listings and messages will also be deleted.\nTHIS CANNOT BE UNDONE!", method: :delete %>
 </div>
 <div class="h-half">
 	<% unless @user.products.empty? %>
-		<h3>Products you're offering</h3>
+		<h3>Your listings</h3>
 		<ul>
 			<% @user.products.each do |product| %>
 				<li><%= link_to product.name, product_path(product) %>
-					<%= "($" + product.formatted_price + ")" %></li>
+					<%= " — " + pluralize(product.reviewers.count, "message") + " received" %></li>
 			<% end %>
 		</ul>
 	<% end %>
 
 	<% unless @user.reviewed_products.empty? %>
-		<h3>Products you've reviewed</h3>
+		<h3>Listings you've messaged</h3>
 		<ul>
 			<% @user.reviewed_products.each do |product| %>
 				<li><%= link_to product.name, product_path(product) %>
-					<%= "($" + product.formatted_price + ")" %></li>
+					<%= "(" + product.formatted_price + ")" %></li>
 			<% end %>
 		</ul>
 	<% end %>

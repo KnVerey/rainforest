@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_filter :set_user, :except => [:new, :create]
+  before_filter :set_and_restrict_user, :except => [:new, :create]
 
   def show
   end
@@ -41,7 +41,8 @@ class UsersController < ApplicationController
   	params.require(:user).permit(:email, :password, :password_confirmation, :username, :first_name, :last_name)
   end
 
-  def set_user
-    @user = User.find(params[:id])
+  def set_and_restrict_user
+    redirect_to new_session_path if session[:user_id].nil?
+    @user = current_user
   end
 end

@@ -2,7 +2,7 @@
 <div class="thumbnails h-full">
 	<% @products.each do |p| %>
 		<a href=<%= product_path(p) %>>
-			<div class="product-image container" style="background-image:url(<%= p.photo %>)">
+			<div class="product-image container" style="background-image:url(<%= p.photo %>); background-size:cover">
 				<h3><%= p.name %>
 				<br>
 				<%= p.formatted_price %></h3>
