@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   before_filter :load_categories, only: [:new, :edit]
 
   def index
-  	@products = Product.last(25)
+  	@products = Product.order(created_at: :desc).last(25)
   end
 
   def show
