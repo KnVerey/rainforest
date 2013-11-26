@@ -6,11 +6,21 @@ class ReviewsController < ApplicationController
   	@review = @product.reviews.build(review_params)
   	@review.user_id = current_user.id
 
-  	if @review.save
-  		redirect_to product_path(@product), :notice => "Message posted"
-  	else
-  		render :action => :show
-  	end
+  	# if @review.save
+  	# 	redirect_to product_path(@product), :notice => "Message posted"
+  	# else
+  	# 	render :action => :show
+  	# end
+
+    respond_to do |format|
+      if @review.save
+        format.html { redirect_to product_path(@product), :notice => "Message posted" }
+        format.js {}
+      else
+        format.html { render 'products/show', alert: "Oops, there was an error. Please try again." }
+        format.js {}
+      end
+    end
   end
 
   def destroy

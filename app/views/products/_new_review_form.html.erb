@@ -3,7 +3,7 @@
 
 	<% if current_user %>
 		
-		<%= form_for([@product, @review]) do |f| %>
+		<%= form_for([@product, @review], :remote => true) do |f| %>
 			<% if @review.errors.any? %>
 				<div class="error-explanation">
 					<h2>There were <%= pluralize(@review.errors.count, "problem") %> with your review: </h2>
