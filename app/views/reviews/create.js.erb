@@ -1,1 +1,7 @@
-$("#list-reviews").html("<%= escape_javascript(render(:partial => 'products/list_reviews')) %>");
+<% if @review.errors.present? %>
+  $("#review-form-errors").html("<%= escape_javascript(render(:partial => 'products/review_form_errors')) %>");
+<% else %>
+  $("#review-form-errors").html("");
+  $("#list-reviews").html("<%= escape_javascript(render(:partial => 'products/list_reviews')) %>");
+  $("#new_review")[0].reset();
+<% end %>

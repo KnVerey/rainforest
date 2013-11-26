@@ -43,6 +43,7 @@ gem 'binding_of_caller'
 gem 'better_errors'
 
 gem 'rails_12factor'
+gem 'pry'
 
 ruby '2.0.0'
 
