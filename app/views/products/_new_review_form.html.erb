@@ -9,6 +9,7 @@
 			</div>
 			<%= f.text_area :comment %>
 			<%= f.submit "Post message to owner" %>
+			<%= token_tag %>
 
 		<% end %>
 	<% else %>

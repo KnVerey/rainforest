@@ -6,12 +6,6 @@ class ReviewsController < ApplicationController
   	@review = @product.reviews.build(review_params)
   	@review.user_id = current_user.id
 
-  	# if @review.save
-  	# 	redirect_to product_path(@product), :notice => "Message posted"
-  	# else
-  	# 	render :action => :show
-  	# end
-
     respond_to do |format|
       if @review.save
         format.html { redirect_to product_path(@product), :notice => "Message posted" }
@@ -26,7 +20,11 @@ class ReviewsController < ApplicationController
   def destroy
   	@review = Review.find(params[:id])
   	@review.destroy
-    redirect_to product_path(@product), notice: "Message successfully deleted"
+
+    respond_to do |format|
+      format.html { redirect_to product_path(@product), notice: "Message successfully deleted" }
+      format.js { }
+    end
   end
 
   private

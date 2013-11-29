@@ -13,7 +13,7 @@
 			</article>
 				<div class="action-button-column">
 					<% if current_user.id == review.user_id %>
-						<%= link_to button_tag("X", class: "delete"), product_review_path(@product, review), confirm: "Are you sure you want to delete this message?", method: :delete %>
+						<%= link_to button_tag("X", class: "delete"), product_review_path(@product, review), confirm: "Are you sure you want to delete this message?", method: :delete, data: { remote: true } %>
 					<% elsif current_user.id == @product.user_id %>
 						<%= mail_to(review.user.email, button_tag("✉", class: "reply"), subject: @product.name, body:"Hi #{review.user.first_name}!\n\nThis is a reply to the message you sent me on Rainforest about my listing \"#{@product.name}\":\n\     |  #{review.comment}" ) %>
 					<% end %>
