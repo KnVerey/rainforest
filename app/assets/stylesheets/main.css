@@ -1,0 +1,332 @@
+/*BROWSER STYLE RESET*/
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License:  none (public domain)
+ */
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,a,img,strong,ol,ul,li,fieldset,form,label,article,aside,footer,header,#nav,section,main,div {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: middle;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+article,footer,header,section {
+	display: block;
+}
+
+button {
+	margin: 0;
+}
+
+ol,ul {
+	list-style: none;
+}
+
+ul {
+	list-style: square;
+	margin: 0 0 2em 2em;
+}
+
+li {
+	padding: 0.5em;
+}
+
+.centered-h1 {
+	text-align:center;
+	margin-bottom: 1em;
+	font-style: italic;
+}
+
+.messages-sent, .user-listings {
+	border: 3px solid forestgreen;
+	border-radius: 5px;
+	padding: 1em;
+	margin: 2em 0;
+}
+
+/*POSITIONING*/
+.container {
+	display: block;
+}
+
+.container:before,.container:after {
+	content: "";
+	display: table;
+}
+
+.container:after {
+	clear: both;
+}
+
+.container {
+	zoom: 1;
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+.h-full {
+	width: 100%;
+}
+
+.h-half {
+	min-width: 49%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.h-center {
+	margin: auto;
+}
+
+.v-full {
+	height: 100%;
+}
+
+header {
+	height: 4em;
+	position: fixed;
+	top: 0;
+	padding: 1em;
+	z-index: 5;
+}
+
+.logo,.logo-img {
+	display: inline-block;
+	max-height: 2.5em;
+}
+
+#nav {
+	height: 3em;
+	position: fixed;
+	top: 4em;
+	padding: 1em;
+	list-style: none;
+	display: block;
+	z-index: 5;
+}
+
+#nav li {
+	display: inline-block;
+	padding: 0;
+}
+
+#dropdown {
+	position: absolute;
+	top: -1000px;
+	left:5em;
+	list-style: none;
+	padding: 1em;
+	margin: 0;
+	border-radius: 5px;
+	z-index: 1;
+
+	-webkit-transition: all 0.8s ease-in-out;
+	-moz-transition: all 0.8s ease-in-out;
+	-o-transition: all 0.8s ease-in-out;
+	-ms-transition: all 0.8s ease-in-out;
+	transition: all 0.8s ease-in-out;
+}
+
+#dropdown li {
+	display: block;
+	padding: 0.25em;
+	font-weight: normal;
+	margin-left: 5px;
+}
+
+#dropdown a:hover {
+	text-decoration: underline;
+}
+
+main {
+	margin: 9em 10% 3em 10%;
+}
+
+.form {
+	width: 60%;
+	margin: 0 20%;
+}
+
+input,textarea {
+	width: 100%;
+	margin-bottom: 1em;
+}
+
+select {
+	width: 25%;
+	margin-bottom: 1em;
+}
+
+textarea {
+	min-height: 4em;
+}
+
+article {
+	border: 1px solid black;
+	padding: 0.5em;
+	border-radius: 5px;
+}
+
+input[type="submit"] {
+	margin: 0;
+}
+
+#product_price_in_dollars {
+	width: 6em;
+}
+
+.form h1 {
+	margin-bottom: 1em;
+}
+
+/*VISUAL STYLING*/
+
+.centered {
+	text-align: center;
+}
+
+#error-explanation, .error-explanation {
+	margin: 1em;
+	padding: 1em;
+	background-color: lightpink;
+	border: 1px solid red;
+	border-radius: 5px;
+}
+
+#error-explanation li {
+	list-style: square;
+	margin-left: 2em;
+}
+
+.field_with_errors {
+	color: red;
+	font-weight: bold;
+	display: inline;
+}
+
+button.delete {
+	color: pink;
+	background-color: white;
+	border-radius: 5px;
+	font-weight: bold;
+
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+	-ms-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+}
+
+button.delete:hover,button.delete:active {
+	color: red;
+	font-size: 0.8em;
+	border-radius: 5px;
+}
+
+button.reply {
+	background-color: forestgreen;
+	color: #99FF99;
+	border-radius: 5px;
+	font-size: 1.5em;
+
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+	-ms-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+}
+
+button.reply:hover,button.reply:active {
+	font-size: 1.8em;
+	color: white;
+}
+
+#login {
+	width: 100%;
+}
+
+h2 {
+	color: #003300;
+	font-style: italic;
+	padding-bottom: 0.5em;
+}
+
+a {
+	text-decoration: none;
+}
+
+#nav a {
+	padding: 0.5em 1em;
+}
+
+.dark a,.medium a {
+	color: #99FF99;
+}
+
+a:hover,a:active {
+	color: white;
+}
+
+.medium {
+	background-color: forestgreen;
+	color: white;
+}
+
+.dark {
+	background-color: #003300;
+	color: white;
+}
+
+.light {
+	background-color: white;
+	color: #003300;
+}
+
+.light a {
+	color: forestgreen;
+}
+
+.light a:hover,.light a:active {
+	color: #003300;
+}
+
+.logo {
+	font-style: italic;
+}
+
+#nav a {
+	font-weight: bold;
+	font-family: serif;
+	text-decoration: none;
+}
+
+.notice {
+	padding: 1em;
+	margin: 1em;
+	background-color: lightyellow;
+	border: 3px solid tomato;
+	border-radius: 5px;
+}
+
+.logo a {
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+.logo a:hover,.logo a:active {
+	color: skyblue;
+}
