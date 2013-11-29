@@ -14,19 +14,19 @@
 				<% @user.products.each do |product| %>
 					<li><%= link_to product.name, product_path(product) %>
 						—
-						<% if product.reviews.count > 0 %><strong><% end %>
-							<%= pluralize(product.reviews.count, "message") + " received" %>
-							<% if product.reviews.count > 0 %></strong><% end %></li>
+						<% if product.messages.count > 0 %><strong><% end %>
+							<%= pluralize(product.messages.count, "message") + " received" %>
+							<% if product.messages.count > 0 %></strong><% end %></li>
 				<% end %>
 			</ul>
 		</section>
 	<% end %>
 
-	<% unless @user.reviewed_products.empty? %>
+	<% unless @user.messageed_products.empty? %>
 		<section class="messages-sent light">
 			<h2>Listings you've messaged</h2>
 			<ul>
-				<% @user.reviewed_products.each do |product| %>
+				<% @user.messageed_products.each do |product| %>
 					<li><%= link_to product.name, product_path(product) %>
 						<%= "(" + product.formatted_price + ")" %></li>
 				<% end %>

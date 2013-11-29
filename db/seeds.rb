@@ -21,5 +21,5 @@ Product.create(:name => 'Socks', :description => "Brand new, still in package.",
 Product.create(:name => 'Christmas Tree', :description => "Must pick up yourself. Located 2 hours outside Toronto.", :price_in_cents => 5000, :photo => 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcToxP7LGzkimv0mmg7hQiCZfQgPCwR2tLnsFlfM1Ws2aXxj6lAq', :user_id => 2, :category_id => 4)
 
 
-Review.create(:comment => "I'm interested. How old is she? Is she vaccinated?", :product_id => 1, :user_id => 2)
-Review.create(:comment => "Would you be willing to take $80?", :product_id => 2, :user_id => 1)
+Message.create(:comment => "I'm interested. How old is she? Is she vaccinated?", :product_id => 1, :user_id => 2)
+Message.create(:comment => "Would you be willing to take $80?", :product_id => 2, :user_id => 1)

@@ -1,5 +1,5 @@
 $(document).ready (function() {
-   $("#new_review")
+   $("#new_message")
       .on('ajax:beforeSend', function() {
         $("input[type='submit']")
           .val('Saving...')

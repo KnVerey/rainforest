@@ -3,8 +3,8 @@ class Product < ActiveRecord::Base
 	validates :price_in_cents, numericality: {only_integer: true}
 
 	belongs_to :user
-	has_many :reviewers, :through => :reviews, :class_name => "User", :source => :user
-	has_many :reviews, dependent: :destroy
+	has_many :messageers, :through => :messages, :class_name => "User", :source => :user
+	has_many :messages, dependent: :destroy
 
 	belongs_to :category
 

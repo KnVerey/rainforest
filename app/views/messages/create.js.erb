@@ -1,0 +1,14 @@
+<% if @message.errors.present? %>
+  $("#message-form-errors").html("<%= escape_javascript(render(:partial => 'products/message_form_errors')) %>");
+<% else %>
+  $("#message-form-errors").html("");
+  $("#list-messages").append("<%= j render(:partial => 'messages/message') %>");
+  $("#new_message")[0].reset();
+
+	$(".message").last().animate(
+		{backgroundColor: "#99FF99"}, 
+		800
+	).delay(300).animate(
+			{backgroundColor: "white"}, 
+				800);
+<% end %>

@@ -16,15 +16,15 @@
 
 </section>
 
-<section class="reviews-display container">
+<section class="messages-display container">
 
 	<% if current_user && (current_user.id == @product.user_id) %>
-		<div id="list-reviews"><%= render "list_reviews" %></div>
-	<% elsif current_user && (current_user.reviewed_products.where(id: @product.id).count > 0) %>
-		<div id="list-reviews"><%= render "list_reviews" %></div>
-		<%= render "new_review_form" %>
+		<div id="list-messages"><%= render "list_messages" %></div>
+	<% elsif current_user && (current_user.messageed_products.where(id: @product.id).count > 0) %>
+		<div id="list-messages"><%= render "list_messages" %></div>
+		<%= render "new_message_form" %>
 	<% else %>
-		<div id="list-reviews"></div>
-		<%= render "new_review_form" %>
+		<div id="list-messages"></div>
+		<%= render "new_message_form" %>
 	<% end %>
 </section>

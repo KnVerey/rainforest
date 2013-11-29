@@ -1,4 +1,4 @@
-class Review < ActiveRecord::Base
+class Message < ActiveRecord::Base
 	belongs_to :product
 	belongs_to :user
 

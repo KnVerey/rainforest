@@ -60,7 +60,7 @@
 	border-radius: 5px;
 }
 
-.reviews-display {
+.messages-display {
 	padding: 1em 3em;
 	min-width: 49%;
 	max-width: 30em;
@@ -68,15 +68,15 @@
 	vertical-align: top;
 }
 
-.reviews-display h2 {
+.messages-display h2 {
 	padding-left: 0.75em;
 }
 
-.review-case {
+.message-case {
 	padding:0 1em 1em 1em;
 }
 
-.review-case article {
+.message-case article {
 	width: 85%;
 	display: inline-block;
 }
@@ -88,7 +88,7 @@
 	text-align: center;
 }
 
-.new-review-form {
+.new-message-form {
 	border:1px dashed #003300;
 	border-radius: 5px;
 	padding: 1em;

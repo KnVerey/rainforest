@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
 
   def show
     if current_user && (current_user.id != @product.user_id)
-      @review = @product.reviews.build
+      @message = @product.messages.build
     end
   end
 
