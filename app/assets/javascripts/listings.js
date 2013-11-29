@@ -9,13 +9,8 @@ $(document).ready (function() {
       $("input[type='submit']")
         .val('Post message to owner')
         .removeAttr('disabled');
-      listenForDelete();
     });
 
-  listenForDelete();
+  $("#list-messages")
+    .on('ajax:complete', "a", function(){ $(this).closest('.message-case').remove(); });
 });
-
-function listenForDelete() {
-  return $(".ajax-delete")
-    .on('ajax:complete', function(){ $(this).closest('.message-case').remove(); });
-}
