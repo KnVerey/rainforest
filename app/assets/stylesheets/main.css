@@ -305,6 +305,10 @@ a:hover,a:active {
 	font-style: italic;
 }
 
+.success {
+	background-color: lightgreen;
+}
+
 #nav a {
 	font-weight: bold;
 	font-family: serif;
