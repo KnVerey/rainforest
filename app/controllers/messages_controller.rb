@@ -23,7 +23,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to listing_path(@listing), notice: "Message successfully deleted" }
-      format.js { }
+      format.js { render :nothing => true}
     end
   end
 
