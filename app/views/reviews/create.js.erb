@@ -5,8 +5,10 @@
   $("#list-reviews").append("<%= j render(:partial => 'reviews/review') %>");
   $("#new_review")[0].reset();
 
-	$(".review-case").last().find("article").addClass("success");
-	setTimeout(function(){
-		$(".review-case").last().find("article").removeClass("success");
-	}, 800);
+	$(".message").last().animate(
+		{backgroundColor: "#99FF99"}, 
+		800
+	).delay(300).animate(
+			{backgroundColor: "white"}, 
+				800);
 <% end %>
