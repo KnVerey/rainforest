@@ -1,0 +1,30 @@
+<section class="listing-display-case dark container">
+
+	<h1><%= @listing.name %></h1>
+	<h3><%= @listing.formatted_price %></h3><br>
+	<p><%= @listing.description %></p>
+	<br><br>
+	<%= image_tag(@listing.photo) unless @listing.photo.empty? %> 
+
+	<section class="nav-buttons medium container">
+		<% if !current_user.nil? && (current_user.id == @listing.user_id) %>
+			<%= link_to button_tag("Edit this listing"), edit_listing_path(@listing) %>
+			<%= link_to button_tag("Delete this listing"), @listing, confirm: "Are you sure you want to delete this listing?", method: :delete %>
+		<% end %>
+		<%= link_to button_tag("Back to main page"), listings_path %>
+	</section>
+
+</section>
+
+<section class="messages-display container">
+
+	<% if current_user && (current_user.id == @listing.user_id) %>
+		<div id="list-messages"><%= render "list_messages" %></div>
+	<% elsif current_user && (current_user.messageed_listings.where(id: @listing.id).count > 0) %>
+		<div id="list-messages"><%= render "list_messages" %></div>
+		<%= render "new_message_form" %>
+	<% else %>
+		<div id="list-messages"></div>
+		<%= render "new_message_form" %>
+	<% end %>
+</section>

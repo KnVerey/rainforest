@@ -2,7 +2,7 @@
 	text-align: center;
 }
 
-.product-image {
+.listing-image {
 	height: 15em;
 	width: 15em;
 	margin: 1em;
@@ -20,7 +20,7 @@
 	display: inline-block;
 }
 
-.product-image h3 {
+.listing-image h3 {
 	display: inline-block;
 	height: 100%;
 	width: 100%;
@@ -28,11 +28,11 @@
 	background-color: rgba(0,0,0,0.5);
 }
 
-.product-image h3:hover {
+.listing-image h3:hover {
 	background-color: rgba(0,0,0,0.7)
 }
 
-.product-display-case {
+.listing-display-case {
 	padding:1em;
 	border: 3px solid forestgreen;
 	border-radius: 5px;
@@ -42,14 +42,14 @@
 	vertical-align: top;
 }
 
-.product-display-case img {
+.listing-display-case img {
 	border: 3px solid forestgreen;
 	border-radius: 5px;	
 	max-width: 25em;
 	max-height: 25em;
 }
 
-.product-display-case h1 {
+.listing-display-case h1 {
 	font-size: 3em;
 }
 

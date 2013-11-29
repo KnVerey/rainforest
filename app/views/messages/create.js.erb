@@ -1,5 +1,5 @@
 <% if @message.errors.present? %>
-  $("#message-form-errors").html("<%= escape_javascript(render(:partial => 'products/message_form_errors')) %>");
+  $("#message-form-errors").html("<%= escape_javascript(render(:partial => 'listings/message_form_errors')) %>");
 <% else %>
   $("#message-form-errors").html("");
   $("#list-messages").append("<%= j render(:partial => 'messages/message') %>");

@@ -7,28 +7,28 @@
 	<%= link_to button_tag("Delete account"), user_path, confirm: "Are you sure you want to delete your account? \nYour listings and messages will also be deleted.\nTHIS CANNOT BE UNDONE!", method: :delete %>
 </div>
 <div class="h-half">
-	<% unless @user.products.empty? %>
+	<% unless @user.listings.empty? %>
 		<section class="user-listings light">
 			<h2>Your listings</h2>
 			<ul>
-				<% @user.products.each do |product| %>
-					<li><%= link_to product.name, product_path(product) %>
+				<% @user.listings.each do |listing| %>
+					<li><%= link_to listing.name, listing_path(listing) %>
 						—
-						<% if product.messages.count > 0 %><strong><% end %>
-							<%= pluralize(product.messages.count, "message") + " received" %>
-							<% if product.messages.count > 0 %></strong><% end %></li>
+						<% if listing.messages.count > 0 %><strong><% end %>
+							<%= pluralize(listing.messages.count, "message") + " received" %>
+							<% if listing.messages.count > 0 %></strong><% end %></li>
 				<% end %>
 			</ul>
 		</section>
 	<% end %>
 
-	<% unless @user.messageed_products.empty? %>
+	<% unless @user.messageed_listings.empty? %>
 		<section class="messages-sent light">
 			<h2>Listings you've messaged</h2>
 			<ul>
-				<% @user.messageed_products.each do |product| %>
-					<li><%= link_to product.name, product_path(product) %>
-						<%= "(" + product.formatted_price + ")" %></li>
+				<% @user.messageed_listings.each do |listing| %>
+					<li><%= link_to listing.name, listing_path(listing) %>
+						<%= "(" + listing.formatted_price + ")" %></li>
 				<% end %>
 			</ul>
 		</section>

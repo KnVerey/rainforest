@@ -36,24 +36,13 @@ li {
 	padding: 0.5em;
 }
 
-.centered-h1 {
-	text-align:center;
-	margin-bottom: 1em;
-	font-style: italic;
-}
-
-.messages-sent, .user-listings {
-	border: 3px solid forestgreen;
-	border-radius: 5px;
-	padding: 1em;
-	margin: 2em 0;
-}
 
 /*POSITIONING*/
-.container {
+
+/*.container {
 	display: block;
 }
-
+*/
 .container:before,.container:after {
 	content: "";
 	display: table;
@@ -182,12 +171,25 @@ input[type="submit"] {
 	margin: 0;
 }
 
-#product_price_in_dollars {
+#listing_price_in_dollars {
 	width: 6em;
 }
 
 .form h1 {
 	margin-bottom: 1em;
+}
+
+.centered-h1 {
+	text-align:center;
+	margin-bottom: 1em;
+	font-style: italic;
+}
+
+.messages-sent, .user-listings {
+	border: 3px solid forestgreen;
+	border-radius: 5px;
+	padding: 1em;
+	margin: 2em 0;
 }
 
 /*VISUAL STYLING*/

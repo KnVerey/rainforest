@@ -1,6 +1,6 @@
 Rainforest::Application.routes.draw do
-  root 'products#index'
-  resources :products do
+  root 'listings#index'
+  resources :listings do
     resources :messages, :only => [:create, :destroy]
   end
   resources :users, :except => [:index]

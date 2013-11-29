@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   	@user = User.new(user_params)
   	if @user.save
   		session[:user_id] = @user.id
-      redirect_to products_path, notice: "Account created! Welcome!"
+      redirect_to listings_path, notice: "Account created! Welcome!"
   	else
   		render "new"
   	end
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   def destroy
     session[:user_id] = nil
     @user.destroy
-    redirect_to products_path, notice: "Account permanently deleted. We're sorry to see you go!"
+    redirect_to listings_path, notice: "Account permanently deleted. We're sorry to see you go!"
   end
 
   private

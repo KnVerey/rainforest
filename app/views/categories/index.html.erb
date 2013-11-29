@@ -3,11 +3,11 @@
 <div class="thumbnails h-full">
 	<% @categories.each do |c| %>
 		<a href=<%= category_path(c) %>>
-			<div class="product-image container" style="background-image:url(<%= c.products.last.photo unless c.products.empty? %>); background-size:cover">
+			<div class="listing-image container" style="background-image:url(<%= c.listings.last.photo unless c.listings.empty? %>); background-size:cover">
 				<h3><%= c.name %> <br> </h3>
 			</div>
 		</a>
 	<% end %>
-	<div class="product-image placeholder"></div>
-	<div class="product-image placeholder"></div>
+	<div class="listing-image placeholder"></div>
+	<div class="listing-image placeholder"></div>
 </div>

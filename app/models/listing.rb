@@ -1,4 +1,4 @@
-class Product < ActiveRecord::Base
+class Listing < ActiveRecord::Base
 	validates :description, :name, :price_in_cents, :category_id, presence: true
 	validates :price_in_cents, numericality: {only_integer: true}
 

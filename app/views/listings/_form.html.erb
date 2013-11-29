@@ -1,9 +1,9 @@
-<%= form_for @product do |p| %>
-	<% if @product.errors.any? %>
+<%= form_for @listing do |p| %>
+	<% if @listing.errors.any? %>
 	<div id="error-explanation">
-		<h3>Uh oh! I found <%= pluralize(@product.errors.count, "problem") %> with your input:</h3>
+		<h3>Uh oh! I found <%= pluralize(@listing.errors.count, "problem") %> with your input:</h3>
 		<ul>
-			<% @product.errors.full_messages.each do |msg| %>
+			<% @listing.errors.full_messages.each do |msg| %>
 				<li><%= msg %></li>
 			<% end %>
 		</ul>
@@ -14,7 +14,7 @@
 	<%= p.text_field :name %>
 	<br>
 	<%= p.label :category_id %> <br>
-	<%= p.select :category_id, options_from_collection_for_select(@categories, 'id', 'name', @product.category_id) %>
+	<%= p.select :category_id, options_from_collection_for_select(@categories, 'id', 'name', @listing.category_id) %>
 	<br>
 	<%= p.label :price_in_dollars, "Price" %> <br>
 	$<%= p.text_field :price_in_dollars %>

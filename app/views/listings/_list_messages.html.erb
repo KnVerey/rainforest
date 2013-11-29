@@ -1,0 +1,6 @@
+<h2>Messages for <%= @listing.name %></h2>
+<% if @listing.messages.count == 0 %>
+	<div class="message-case">No messages yet.</div>
+<% end %>
+
+<%= render @listing.messages %>

@@ -1,11 +1,7 @@
-<h1 class="centered-h1">Category: <%= @category.name %></h1>
-
-<% if @category.listings.empty? %>
-	<p class="centered">There aren't any listings here yet.</p>
-<% end %>
+<h1 class="centered-h1">Most recent listings</h1>
 
 <div class="thumbnails h-full">
-	<% @category.listings.each do |p| %>
+	<% @listings.each do |p| %>
 		<a href=<%= listing_path(p) %>>
 			<div class="listing-image container" style="background-image:url(<%= p.photo %>); background-size:cover">
 				<h3><%= p.name %>

@@ -11,7 +11,7 @@
 	<header class="h-full medium">
 		<div class="left">
 			<%= image_tag("Rainforest-icon.png", class: "logo-img") %>
-			<h1 class="logo"><%= link_to "Rainforest", products_path %></h1></div>
+			<h1 class="logo"><%= link_to "Rainforest", listings_path %></h1></div>
 		<div class="user-info right">
 			<% if current_user %>
 				Signed in as <strong><%= current_user.first_name + " " + current_user.last_name %></strong><br>
@@ -25,9 +25,9 @@
 	</header>
 
 	<ul id="nav" class="dark h-full">
-		<li><%= link_to "Home", products_path %></li>
+		<li><%= link_to "Home", listings_path %></li>
 		<li><%= link_to "Categories", categories_path, onmouseover: "dropDown();", onmouseout:"rollUp();" %></li>
-		<li><%= link_to "Add Listing", new_product_path %></li>
+		<li><%= link_to "Add Listing", new_listing_path %></li>
 	</ul>
 
 	<ul id="dropdown" class="dark" onmouseover="dropDown();" onmouseout="rollUp();">
