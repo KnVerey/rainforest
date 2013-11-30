@@ -6,6 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.delete_all
+Category.delete_all
+Listing.delete_all
+Message.delete_all
+
 categories = %w(Electronics Pets Clothing Transportation Miscellaneous Furniture Sports Decoration Books Jewellery Instruments Tools Kids Appliances)
 categories.sort!
 categories.each do |cat|

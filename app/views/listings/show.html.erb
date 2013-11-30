@@ -20,7 +20,7 @@
 
 	<% if current_user && (current_user.id == @listing.user_id) %>
 		<div id="list-messages"><%= render "list_messages" %></div>
-	<% elsif current_user && (current_user.messageed_listings.where(id: @listing.id).count > 0) %>
+	<% elsif current_user && (current_user.messaged_listings.where(id: @listing.id).count > 0) %>
 		<div id="list-messages"><%= render "list_messages" %></div>
 		<%= render "new_message_form" %>
 	<% else %>

@@ -22,11 +22,11 @@
 		</section>
 	<% end %>
 
-	<% unless @user.messageed_listings.empty? %>
+	<% unless @user.messaged_listings.empty? %>
 		<section class="messages-sent light">
 			<h2>Listings you've messaged</h2>
 			<ul>
-				<% @user.messageed_listings.each do |listing| %>
+				<% @user.messaged_listings.each do |listing| %>
 					<li><%= link_to listing.name, listing_path(listing) %>
 						<%= "(" + listing.formatted_price + ")" %></li>
 				<% end %>

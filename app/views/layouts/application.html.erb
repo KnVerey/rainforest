@@ -26,11 +26,12 @@
 
 	<ul id="nav" class="dark h-full">
 		<li><%= link_to "Home", listings_path %></li>
-		<li><%= link_to "Categories", categories_path, onmouseover: "dropDown();", onmouseout:"rollUp();" %></li>
+		<li><%= link_to "Categories", categories_path, id: "dropdown-anchor" %></li>
 		<li><%= link_to "Add Listing", new_listing_path %></li>
 	</ul>
 
-	<ul id="dropdown" class="dark" onmouseover="dropDown();" onmouseout="rollUp();">
+	<ul id="dropdown">
+		<li class="spacer"></li>
 		<% Category.all.each do |c| %>
 			<li><%= link_to c.name, category_path(c) %></li>
 			<% if c.id % 7 == 0 %>

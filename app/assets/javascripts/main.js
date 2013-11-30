@@ -1,7 +1,9 @@
-function dropDown() {
-	document.getElementById("dropdown").style.top = '6.75em';
-}
+$(document).ready(function() {
+	$("#dropdown-anchor").on("mouseover", function(){
+		if($("#dropdown").css("display")==="none") { $("#dropdown").slideDown(); }
+	});
+	$("#dropdown").on("mouseleave", function(){
+		$("#dropdown").slideUp();
+	});
+});
 
-function rollUp() {
-	document.getElementById("dropdown").style.top = '-1000px';
-}

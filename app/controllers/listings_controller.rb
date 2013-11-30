@@ -42,7 +42,6 @@ class ListingsController < ApplicationController
   end
 
   def destroy
-    debugger
   	@listing.destroy
   	redirect_to listings_path
   end
