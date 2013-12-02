@@ -3,7 +3,7 @@ class Listing < ActiveRecord::Base
 	validates :price_in_cents, numericality: {only_integer: true}
 
 	belongs_to :user
-	has_many :messageers, :through => :messages, :class_name => "User", :source => :user
+	has_many :messagers, :through => :messages, :class_name => "User", :source => :user
 	has_many :messages, dependent: :destroy
 
 	belongs_to :category
