@@ -12,5 +12,25 @@ $(document).ready (function() {
     });
 
   $("#list-messages")
-    .on('ajax:complete', "a", function(){ $(this).closest('.message-case').remove(); });
+    .on('ajax:complete', "a", function(){
+      alert("Success");
+      $(this).closest('.message-case').remove();
+    });
+
+  $(".ajax-delete")
+    .on('click', function(event){
+      event.preventDefault();
+      var ok = confirm("Are you sure you want to delete this message?");
+
+      if (ok) {
+        var url = $(this).attr("href");
+
+        $.ajax({
+          type: "DELETE",
+          url: url,
+          dataType: "json",
+          data: {}
+        });
+      }
+    });
 });

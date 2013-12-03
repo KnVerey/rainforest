@@ -20,10 +20,9 @@ class MessagesController < ApplicationController
   def destroy
   	@message = Message.find(params[:id])
   	@message.destroy
-
     respond_to do |format|
-      # format.html { redirect_to listing_path(@listing), notice: "Message successfully deleted" }
-      format.js { render nothing: true, status: :see_other } #Forces GET.
+      format.html { redirect_to listing_path(@listing), notice: "Message successfully deleted" }
+      format.json { render nothing: true }
     end
   end
 
