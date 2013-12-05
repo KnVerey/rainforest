@@ -12,15 +12,12 @@ $(document).ready (function() {
     });
 
   $("#list-messages")
-    .on('ajax:complete', "a", function(){
-      alert("Success");
-      $(this).closest('.message-case').remove();
-    });
+    .on('click', ".ajax-delete", function(event){
+      var self = $(this),
+          message = self.closest(".message-case"),
+          ok = confirm("Are you sure you want to delete this message?");
 
-  $(".ajax-delete")
-    .on('click', function(event){
       event.preventDefault();
-      var ok = confirm("Are you sure you want to delete this message?");
 
       if (ok) {
         var url = $(this).attr("href");
@@ -28,8 +25,9 @@ $(document).ready (function() {
         $.ajax({
           type: "DELETE",
           url: url,
-          dataType: "json",
-          data: {}
+          dataType: "json"
+        }).done(function(data){
+          self.closest('.message-case').remove();
         });
       }
     });

@@ -22,7 +22,7 @@ class MessagesController < ApplicationController
   	@message.destroy
     respond_to do |format|
       format.html { redirect_to listing_path(@listing), notice: "Message successfully deleted" }
-      format.json { render nothing: true }
+      format.json { render json: params[:id] }
     end
   end
 
